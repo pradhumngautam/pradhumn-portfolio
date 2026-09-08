@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:isolated": "NEXT_ISOLATED_BUILD=1 next build",
     "start": "next start",
     "lint": "next lint"
   },
