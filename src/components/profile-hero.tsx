@@ -57,10 +57,8 @@ export default function ProfileHero() {
           </div>
 
           <p className="mt-6 text-sm font-light leading-relaxed text-[#B4B4B4] md:ml-[100px]">
-            I build reliable backend and data systems for AI products—from
-            distributed workers and rate-limited ETL pipelines to PostgreSQL
-            services, billing, integrations, and the interfaces used to operate
-            them.
+            I build backend infrastructure and full-stack applications for AI
+            products.
           </p>
         </section>
       </SmoothReveal>
