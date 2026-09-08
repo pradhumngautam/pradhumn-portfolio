@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Keep production builds from replacing chunks used by the local dev server.
-  distDir: process.env.NODE_ENV === "development" ? ".next" : ".next-build",
-};
+const nextConfig =
+  process.env.NEXT_ISOLATED_BUILD === "1"
+    ? { distDir: ".next-build" }
+    : {};
 
 module.exports = nextConfig;
