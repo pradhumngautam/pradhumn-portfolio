@@ -1,28 +1,34 @@
-import Link from "next/link";
-import { Button } from "./ui/button";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+
+const socials = [
+  { label: "GitHub", href: "https://github.com/pradhumngautam", icon: Github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/pradhumngautam/", icon: Linkedin },
+  { label: "X", href: "https://x.com/iPradhumnGautam", icon: Twitter },
+  { label: "Email", href: "mailto:pradhumngautam0506@gmail.com", icon: Mail },
+];
 
 const Footer = () => {
   return (
-    <div className="border-t w-full px-6 lg:px-20 py-4 text-zinc-500">
-      <div className="flex flex-col-reverse md:flex-row-reverse items-center justify-between w-full">
-        <div className="flex flex-row items-center justify-between space-x-4">
-          <Button size={"sm"} variant={"link"} asChild>
-            <Link href={"https://github.com/pradhumngautam"} target="_blank">
-              GitHub
-            </Link>
-          </Button>
-          <Button size={"sm"} variant={"link"} asChild>
-            <Link href={"https://twitter.com/iPradhumnGautam"} target="_blank">
-              Twitter/X
-            </Link>
-          </Button>
+    <>
+      <footer className="portfolio-footer">
+        <div>
+          {socials.map(({ label, href, icon: Icon }) => (
+            <a href={href} target="_blank" rel="noreferrer" key={label}>
+              <Icon /> {label}
+            </a>
+          ))}
         </div>
-
-        <div className="text-sm">
-          © 2024 Pradhumn Gautam. All rights reserved.
-        </div>
-      </div>
-    </div>
+        <p>© {new Date().getFullYear()} Pradhumn Gautam. All rights reserved.</p>
+      </footer>
+      <div className="dock-fade" />
+      <nav className="social-dock" aria-label="Social links">
+        {socials.map(({ label, href, icon: Icon }) => (
+          <a aria-label={label} href={href} target="_blank" rel="noreferrer" key={label}>
+            <Icon />
+          </a>
+        ))}
+      </nav>
+    </>
   );
 };
 
