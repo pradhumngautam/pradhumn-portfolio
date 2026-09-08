@@ -24,31 +24,35 @@ export default function ProfileHero() {
             />
 
             <div className="min-w-0 flex-1">
-              <h1 className="text-lg font-medium tracking-tight text-[#EEEEEE]">
-                Pradhumn Gautam
-              </h1>
-              <p className="mt-0.5 text-sm text-[#B4B4B4]">
-                Software Engineer · Backend &amp; Data Systems
-              </p>
-              <div className="mt-4 flex flex-col gap-2 text-xs text-[#B4B4B4] sm:flex-row sm:flex-wrap sm:gap-x-5">
-                <span className="inline-flex items-center gap-2">
-                  <MapPin className="h-3.5 w-3.5" /> New Delhi, India
+              <div className="flex flex-col items-start justify-between gap-2 md:flex-row md:items-center">
+                <div>
+                  <h1 className="text-lg font-medium tracking-tight text-[#EEEEEE]">
+                    Pradhumn Gautam
+                  </h1>
+                  <p className="mt-0.5 text-sm text-[#B4B4B4]">
+                    Software Engineer · Backend &amp; Data Systems
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  {iconLinks.map(({ label, href, icon: Icon }) => (
+                    <Link key={label} aria-label={label} className="grid h-9 w-9 place-items-center rounded-lg border border-zinc-800 bg-[#111111] text-[#B4B4B4] transition-colors hover:bg-zinc-800/50 hover:text-[#EEEEEE]" href={href} target="_blank">
+                      <Icon className="h-4 w-4" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-4 space-y-2 text-sm text-[#B4B4B4]">
+                <span className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" /> New Delhi, India
                 </span>
-                <Link className="inline-flex items-center gap-2 transition-colors hover:text-[#EEEEEE]" href="mailto:pradhumngautam0506@gmail.com">
-                  <Mail className="h-3.5 w-3.5" /> Email
+                <Link className="flex items-center gap-2 transition-colors hover:text-[#EEEEEE]" href="mailto:pradhumngautam0506@gmail.com">
+                  <Mail className="h-4 w-4" />
+                  <span className="truncate">pradhumngautam0506@gmail.com</span>
                 </Link>
-                <Link className="inline-flex items-center gap-2 transition-colors hover:text-[#EEEEEE]" href="https://www.linkedin.com/in/pradhumngautam/" target="_blank">
-                  <Linkedin className="h-3.5 w-3.5" /> LinkedIn
+                <Link className="flex items-center gap-2 transition-colors hover:text-[#EEEEEE]" href="https://www.linkedin.com/in/pradhumngautam/" target="_blank">
+                  <Linkedin className="h-4 w-4" /> pradhumngautam
                 </Link>
               </div>
-            </div>
-
-            <div className="hidden gap-2 sm:flex">
-              {iconLinks.map(({ label, href, icon: Icon }) => (
-                <Link key={label} aria-label={label} className="grid h-9 w-9 place-items-center rounded-lg border border-zinc-800 text-[#B4B4B4] transition-colors hover:bg-zinc-900 hover:text-[#EEEEEE]" href={href} target="_blank">
-                  <Icon className="h-4 w-4" />
-                </Link>
-              ))}
             </div>
           </div>
 

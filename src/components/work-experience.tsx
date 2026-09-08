@@ -10,10 +10,7 @@ import type {
 
 function Position({ position }: { position: ExperiencePosition }) {
   return (
-    <details
-      className="group relative last:before:absolute last:before:h-full last:before:w-14 last:before:bg-[#111111]"
-      open={position.isExpanded}
-    >
+    <details className="group relative" open={position.isExpanded}>
       <summary className="block w-full cursor-pointer select-none text-left">
         <div className="relative z-[1] mb-1 flex items-center gap-3">
           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-zinc-800 text-zinc-400">
