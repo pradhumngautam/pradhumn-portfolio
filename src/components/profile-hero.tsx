@@ -76,9 +76,9 @@ export default function ProfileHero() {
             carefully designed data models.
           </p>
           <p>
-            Alongside product engineering, I&apos;m completing a B.Tech in Computer
-            Science with a specialization in Artificial Intelligence at
-            Maharaja Agrasen Institute of Technology, with a 9.1 CGPA.
+            I have completed a B.Tech in Computer Science, specializing in
+            Artificial Intelligence, from Maharaja Agrasen Institute of
+            Technology with a 9.1 CGPA.
           </p>
         </div>
       </SmoothReveal>
