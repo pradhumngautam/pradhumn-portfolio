@@ -20,6 +20,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; min-width: 320px; background: var(--canvas); color: var(--text); font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 1.6; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
+.topbar { height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px; border-bottom: 1px solid #171717; color: var(--subtle); font-size: 11px; }.topbar-time { display: inline-flex; align-items: center; gap: 6px; color: var(--success); }.topbar-time i { width: 5px; height: 5px; border-radius: 999px; background: currentColor; box-shadow: 0 0 8px currentColor; }
 .page-shell { width: min(100% - 32px, 768px); margin: 0 auto; }
 .page-section { margin-top: 56px; }
 .section-heading { margin: 0 0 14px; color: var(--text); font-size: 15px; font-weight: 650; letter-spacing: -.01em; }
