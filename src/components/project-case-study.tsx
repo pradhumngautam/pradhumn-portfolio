@@ -62,7 +62,7 @@ export default function ProjectCaseStudy() {
       className="mt-14 flex w-full flex-col items-start gap-3"
       delay={0.2}
     >
-      <h2 className="font-medium text-[#EEEEEE]">Selected project</h2>
+      <h2 className="font-medium text-[#EEEEEE]">Featured project</h2>
       <p className="mb-4 font-light text-[#B4B4B4]">
         A deeper look at a wallet system designed around authentication,
         transaction integrity, and clear money-movement workflows.
@@ -150,14 +150,6 @@ export default function ProjectCaseStudy() {
               target="_blank"
             >
               <Github className="h-4 w-4" /> View source
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-            <Link
-              className="inline-flex items-center gap-2 text-sm text-zinc-400 transition-colors hover:text-white"
-              href="https://paytm-gules.vercel.app/"
-              target="_blank"
-            >
-              <Cloud className="h-4 w-4" /> Live project
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

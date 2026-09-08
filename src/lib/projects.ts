@@ -23,7 +23,6 @@ export const projects: Project[] = [
     ],
     tags: ["JavaScript", "React", "Vite", "Express", "MongoDB", "Mongoose", "JWT", "Zod"],
     github: "https://github.com/pradhumngautam/paytm-2",
-    live: "https://paytm-gules.vercel.app/",
     featured: true,
   },
 ];
