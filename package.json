@@ -7,7 +7,9 @@
     "build": "next build",
     "build:isolated": "NEXT_ISOLATED_BUILD=1 next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --test tests/*.test.cjs",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
