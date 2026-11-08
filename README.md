@@ -45,6 +45,21 @@ Use `pnpm build:isolated` to build into `.next-build` while a development server
 
 The homepage, `/projects`, and `/writing` share the same visual system. Writing links to the original Hashnode publication.
 
+## Search and AI discovery
+
+- Every HTML page has its own title, description, canonical production URL, Open Graph tags, and Twitter card. `/opengraph-image` generates a 1200 × 630 dark link-preview card using local fonts.
+- `/sitemap.xml` lists the six canonical HTML pages. `/robots.txt` allows crawling and advertises the sitemap. Modification timestamps are omitted unless a real content-edit date is available.
+- JSON-LD identifies the author and website, the homepage as a `ProfilePage`, project collections and source code, breadcrumbs, and the original Hashnode article. Claims match the visible content.
+- Project case studies live at `/projects/webhook-platform`, `/projects/inventory-system`, and `/projects/payment-system`. Their content is rendered on the server and linked from project cards.
+- `/llms.txt` is a concise navigation index; `/llms-full.txt` contains profile, experience, project details, and article summaries. Each HTML page advertises a matching Markdown endpoint (for example `/projects/webhook-platform/index.md`). These variants are generated from the same data as the visible pages.
+- Markdown/text variants carry `noindex` and canonical/discovery headers so the HTML pages remain the search results. Vercel previews also carry `noindex`; production pages allow indexing.
+
+After building and starting a production server, run `pnpm test:seo`. Set `SEO_BASE_URL` for a different address, or `SEO_EXPECT_PREVIEW=1` when checking an accessible preview. The checks inspect delivered HTML without client JavaScript: unique metadata, canonicals, JSON-LD, headings, indexability, Markdown discovery, sitemap, robots, llms links, social image dimensions, and 404s.
+
+After deploying to production, submit `https://www.pradhumn.com/sitemap.xml` in the verified Google Search Console property and use URL Inspection to request indexing of the homepage and case studies. No verification token is embedded in this repository. Search engines and sharing apps decide when to refresh their caches.
+
+`llms.txt` is a proposed agent-navigation convention, not an indexing control or ranking guarantee. Search and AI visibility still depend on useful content, crawlability, authority, and the systems choosing to cite it. See [the proposal](https://llmstxt.org/) and [Google's AI search guidance](https://developers.google.com/search/docs/appearance/ai-features).
+
 ## GitHub activity
 
 The server fetches the public contribution calendar for `pradhumngautam`, with hourly Next.js revalidation and a six-second timeout. Daily counts, intensity levels, dates, and GitHub's reported annual total come from that public response.

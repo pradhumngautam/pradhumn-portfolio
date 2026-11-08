@@ -425,7 +425,7 @@ summary::-webkit-details-marker {
 .section-heading {
   margin-bottom: 28px;
 }
-.section-heading h2 {
+.section-heading :is(h1, h2) {
   display: flex;
   gap: 12px;
   align-items: baseline;
@@ -1160,7 +1160,7 @@ summary::-webkit-details-marker {
   .social-links svg {
     width: 12px;
   }
-  .section-heading h2 {
+  .section-heading :is(h1, h2) {
     font-size: 17px;
   }
   .section-heading > p,
@@ -1291,4 +1291,37 @@ summary::-webkit-details-marker {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.case-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  margin: -10px 0 28px;
+}
+.case-breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.case-study-copy {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+.case-study-copy h2 {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 30px 0 12px;
+}
+.case-study-copy > ul:not(.draft-tags) {
+  list-style: disc;
+  padding-left: 18px;
+}
+.case-study-copy > ul:not(.draft-tags) li + li {
+  margin-top: 10px;
+}
+.case-study-copy .draft-tags {
+  margin-top: 12px;
 }

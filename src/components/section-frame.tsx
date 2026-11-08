@@ -7,6 +7,7 @@ export default function SectionFrame({
   description,
   children,
   className = "",
+  headingLevel = "h2",
 }: {
   id: string;
   number?: string;
@@ -14,7 +15,9 @@ export default function SectionFrame({
   description?: string;
   children: ReactNode;
   className?: string;
+  headingLevel?: "h1" | "h2";
 }) {
+  const Heading = headingLevel;
   return (
     <section
       id={id}
@@ -23,10 +26,10 @@ export default function SectionFrame({
     >
       {title && (
         <header className="section-heading">
-          <h2 id={`${id}-title`}>
+          <Heading id={`${id}-title`}>
             {number && <span className="section-number">{number}</span>}
             {title}
-          </h2>
+          </Heading>
           {description && <p>{description}</p>}
         </header>
       )}

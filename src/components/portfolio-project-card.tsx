@@ -1,5 +1,6 @@
 import { ArrowUpRight, Check, Github } from "lucide-react";
 import type { Project } from "@/lib/projects";
+import Link from "next/link";
 
 export default function PortfolioProjectCard({
   project,
@@ -60,6 +61,7 @@ export default function PortfolioProjectCard({
         ))}
       </ul>
       <div className="project-links">
+        <Link href={`/projects/${project.slug}`}>Read case study →</Link>
         <a href={project.github} target="_blank" rel="noreferrer">
           <Github size={14} />
           Source code
