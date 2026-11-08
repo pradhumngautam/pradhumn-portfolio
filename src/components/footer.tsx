@@ -1,35 +1,34 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
-
-const socials = [
-  { label: "GitHub", href: "https://github.com/pradhumngautam", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/pradhumngautam/", icon: Linkedin },
-  { label: "X", href: "https://x.com/iPradhumnGautam", icon: Twitter },
-  { label: "Email", href: "mailto:pradhumngautam0506@gmail.com", icon: Mail },
-];
-
-const Footer = () => {
+import { profile } from "@/lib/profile";
+import SectionNav from "@/components/section-nav";
+export default function Footer() {
   return (
     <>
-      <footer className="portfolio-footer">
-        <div>
-          {socials.map(({ label, href, icon: Icon }) => (
-            <a href={href} target="_blank" rel="noreferrer" key={label}>
-              <Icon /> {label}
+      <footer className="site-footer">
+        <div className="footer-row">
+          <p>
+            © {new Date().getFullYear()} {profile.name}
+          </p>
+          <nav aria-label="Footer links">
+            <a href={profile.github} target="_blank" rel="noreferrer">
+              GitHub
             </a>
-          ))}
+            <a href={profile.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+            <a href={`mailto:${profile.email}`}>Email</a>
+          </nav>
         </div>
-        <p>© {new Date().getFullYear()} Pradhumn Gautam. All rights reserved.</p>
+        <div className="footer-note">
+          <span className="eyebrow">
+            A working principle <span>№ 01</span>
+          </span>
+          <p>
+            Build the simplest system that remains dependable when the happy
+            path ends.
+          </p>
+        </div>
       </footer>
-      <div className="dock-fade" />
-      <nav className="social-dock" aria-label="Social links">
-        {socials.map(({ label, href, icon: Icon }) => (
-          <a aria-label={label} href={href} target="_blank" rel="noreferrer" key={label}>
-            <Icon />
-          </a>
-        ))}
-      </nav>
+      <SectionNav />
     </>
   );
-};
-
-export default Footer;
+}
