@@ -14,7 +14,7 @@ Project cards link to design and verification documents. Test counts describe lo
 
 ## Local development
 
-Requires Node.js 20 or newer and pnpm 8 (the repository uses a pnpm lockfile).
+Requires Node.js 22 and pnpm 8 (the repository uses a pnpm lockfile). Run `nvm use` if you use nvm. The `engines.node` field also pins Vercel builds and functions to Node.js 22, overriding the project's older dashboard default.
 
 ```sh
 pnpm install --frozen-lockfile
