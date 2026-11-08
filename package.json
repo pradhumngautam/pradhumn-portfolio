@@ -12,7 +12,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "node --test tests/*.test.cjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:seo": "node scripts/check-seo.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",

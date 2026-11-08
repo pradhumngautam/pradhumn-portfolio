@@ -4,6 +4,10 @@ import localFont from "next/font/local";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { isPreview, siteUrl, siteDescription } from "@/lib/seo";
+import { profile } from "@/lib/profile";
+import { identitySchema } from "@/lib/structured-data";
+import JsonLd from "@/components/json-ld";
 
 const geist = localFont({
   src: [
@@ -22,22 +26,27 @@ const mono = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.pradhumn.com"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Pradhumn Gautam — Software Engineer",
     template: "%s | Pradhumn Gautam",
   },
-  description:
-    "Software engineer at QodexAI building backend infrastructure, reliable data systems, and AI products. Projects, engineering notes, and open-source code.",
-  openGraph: {
-    title: "Pradhumn Gautam — Software Engineer",
-    description:
-      "Backend infrastructure, data integrity, and the systems behind the interface.",
-    url: "https://www.pradhumn.com",
-    type: "website",
-    images: [{ url: "/pradhumngautam.jpeg", alt: "Pradhumn Gautam" }],
-  },
-  twitter: { card: "summary", creator: "@iPradhumnGautam" },
+  description: siteDescription,
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  robots: isPreview
+    ? { index: false, follow: true }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+          "max-video-preview": -1,
+        },
+      },
   icons: { icon: "/favicon.ico" },
 };
 export default function RootLayout({
@@ -47,7 +56,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="describedby" href="/llms.txt" type="text/plain" />
+      </head>
       <body className={`${geist.variable} ${mono.variable}`}>
+        <JsonLd data={identitySchema} />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
